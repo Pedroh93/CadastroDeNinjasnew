@@ -1,9 +1,15 @@
 package dev.java10x.Cadastronew;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name="tb_ninjas")
+@NoArgsConstructor // cria os construtores vazios
+@AllArgsConstructor // cria os construtores com argumento
+@Data // cria os getter e os setter
 public class NinjaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,21 +18,4 @@ public class NinjaModel {
     private  String email;
     private  int idade;
 
-    public NinjaModel() {
-       ;
-    }
-
-    public NinjaModel(String nome, String email, int idade) {
-        this.nome = nome;
-        this.email = email;
-        this.idade = idade;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
 }
