@@ -1,10 +1,7 @@
 package dev.java10x.Cadastronew.missoes;
 
 import dev.java10x.Cadastronew.ninjas.NinjaModel;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,7 +19,8 @@ public class missoesModel {
  private    String nome;
     private String dificuldade;
     private NinjaModel ninja;
-
+@Column (name = "imf_Url")
+private String imgUrl;
     // uma missão pode ter varios ninjas
     @OneToMany(mappedBy = "missoes")
     private List<NinjaModel>Ninjas;
