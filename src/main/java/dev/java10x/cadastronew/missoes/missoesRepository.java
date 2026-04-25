@@ -1,4 +1,4 @@
-package dev.java10x.Cadastronew.missoes;
+package dev.java10x.cadastronew.missoes;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

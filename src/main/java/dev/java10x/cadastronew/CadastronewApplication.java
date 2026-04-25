@@ -1,4 +1,4 @@
-package dev.java10x.Cadastronew;
+package dev.java10x.cadastronew;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,29 +1,31 @@
-package dev.java10x.Cadastronew.missoes;
+package dev.java10x.cadastronew.missoes;
 
-import dev.java10x.Cadastronew.ninjas.NinjaModel;
+import dev.java10x.cadastronew.ninjas.NinjaModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.util.List;
 
 @Entity
-@Table(name="tb_misoses")
-@NoArgsConstructor // cria os construtores vazios
-@AllArgsConstructor // cria os construtores com argumento
-@Data // cria os getter e os setter
+@Table(name = "tb_missoes")
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class missoesModel {
+
     @Id
-   private long id;
- private    String nome;
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // ✅ adicionado
+    private long id;
+
+    private String nome;
     private String dificuldade;
-    private NinjaModel ninja;
-@Column (name = "imf_Url")
-private String imgUrl;
-    // uma missão pode ter varios ninjas
+    private  String email;
+    @Column(name = "img_Url")
+    private String imgUrl;
+
     @OneToMany(mappedBy = "missoes")
-    private List<NinjaModel>Ninjas;
+    private List<NinjaModel> Ninjas;
 
-
+    // ❌ Removi o campo "private NinjaModel ninja" — era ele causando o erro
 }

@@ -1,4 +1,4 @@
-package dev.java10x.Cadastronew;
+package dev.java10x.cadastronew;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
