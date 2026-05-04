@@ -1,5 +1,6 @@
 package dev.java10x.cadastronew.missoes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.java10x.cadastronew.ninjas.NinjaModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -23,8 +24,8 @@ public class missoesModel {
     private  String email;
     @Column(name = "img_Url")
     private String imgUrl;
-
-    @OneToMany(mappedBy = "missoes")
+    @OneToMany(mappedBy = "missoes", fetch = FetchType.EAGER)
+    @JsonIgnore
     private List<NinjaModel> Ninjas;
 
     // ❌ Removi o campo "private NinjaModel ninja" — era ele causando o erro
