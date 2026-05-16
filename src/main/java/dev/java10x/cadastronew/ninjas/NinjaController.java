@@ -47,8 +47,8 @@ public NinjaModel criarNinja(@RequestBody NinjaModel ninja){
         return "Alterar ninja por id";
     }
     //deletar
-    @DeleteMapping("/delete")
-    public String deletarPorId(){
+    @DeleteMapping("/deletar/{id}")
+    public String deletarPorId(@PathVariable long id){
         return "ninja deletado pelo id";
     }
 
