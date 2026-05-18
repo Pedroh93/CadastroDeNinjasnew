@@ -38,18 +38,20 @@ public NinjaModel criarNinja(@RequestBody NinjaModel ninja){
     }
         //read
     @GetMapping("/listar/{id}")
-    public NinjaModel mostrarPorId(@PathVariable long id){
-        return ninjaService.ListarPorId(id);
+    public NinjaModel mostrarPorId(@PathVariable Long id){
+        return ninjaService.listarPorId(id);
     }
     //alterar dados
-    @PutMapping("/alterar")
-    public  String alterarNinjaPorId(){
-        return "Alterar ninja por id";
+    @PutMapping("/alterar/{id}")
+    public NinjaModel alterarNinjaPorId(@PathVariable Long id, @RequestBody NinjaModel ninja){
+        return ninjaService.atualizarNinja(id, ninja);
     }
     //deletar
     @DeleteMapping("/deletar/{id}")
     public String deletarPorId(@PathVariable long id){
+        ninjaService.deletarPorId(id);
         return "ninja deletado pelo id";
     }
+
 
 }
